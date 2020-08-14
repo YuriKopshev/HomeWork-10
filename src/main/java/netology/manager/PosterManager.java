@@ -1,7 +1,7 @@
 package netology.manager;
 
 
-import ru.netology.domain.Movie;
+import netology.domain.Movie;
 
 public class PosterManager {
     int moviesCount = 10;

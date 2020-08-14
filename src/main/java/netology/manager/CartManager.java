@@ -1,6 +1,7 @@
 package netology.manager;
 
-import ru.netology.domain.PurchaseItem;
+
+import netology.domain.PurchaseItem;
 
 public class CartManager {
   private PurchaseItem[] items = new PurchaseItem[0];
