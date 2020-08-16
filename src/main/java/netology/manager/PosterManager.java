@@ -3,8 +3,10 @@ package netology.manager;
 
 import netology.domain.Movie;
 
+
 public class PosterManager {
     int moviesCount = 10;
+
 
     public PosterManager() {
     }
@@ -27,15 +29,16 @@ public class PosterManager {
         movies = poster;
 
     }
-    public Movie[]getMovies(){
-        Movie[]result = new Movie[movies.length];
+
+    public Movie[] getMovies() {
+        Movie[] result = new Movie[movies.length];
         for (int i = 0; i < result.length; i++) {
-          int index = movies.length-i-1;
-            result[i]= movies[index];
+            int index = movies.length - i - 1;
+            result[i] = movies[index];
         }
-        Movie[]resultList = new Movie[moviesCount];
+        Movie[] resultList = new Movie[moviesCount];
         for (int i = 0; i < resultList.length; i++) {
-            resultList[i]=result[i];
+            resultList[i] = result[i];
         }
         return resultList;
     }
