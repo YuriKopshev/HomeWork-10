@@ -20,9 +20,6 @@ public class PosterManager {
 
     public void add(Movie movie) {
         Movie[] poster = new Movie[movies.length + 1];
-        for (int i = 0; i < movies.length; i++) {
-            poster[i] = movies[i];
-        }
         System.arraycopy(movies, 0, poster, 0, movies.length);
         int lastIndex = poster.length - 1;
         poster[lastIndex] = movie;
@@ -31,16 +28,16 @@ public class PosterManager {
     }
 
     public Movie[] getMovies() {
-        Movie[] result = new Movie[movies.length];
-        for (int i = 0; i < result.length; i++) {
+        int count = moviesCount;
+        if (moviesCount > movies.length) {
+            count = movies.length;
+        }
+        Movie[] result = new Movie[count];
+        for (int i = 0; i < count; i++) {
             int index = movies.length - i - 1;
             result[i] = movies[index];
         }
-        Movie[] resultList = new Movie[moviesCount];
-        for (int i = 0; i < resultList.length; i++) {
-            resultList[i] = result[i];
-        }
-        return resultList;
+        return result;
     }
 
 

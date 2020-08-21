@@ -28,8 +28,8 @@ public class AfishaManager {
         afishaRepository.removeById(filmId);
     }
 
-    public void findById(int filmId) {
-        afishaRepository.findById(filmId);
+    public Movie findById(int filmId) {
+       return afishaRepository.findById(filmId);
     }
 
     public void removeAll() {

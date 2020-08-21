@@ -13,16 +13,17 @@ class PosterManagerTest {
     private PosterManager posterManager2 = new PosterManager(9);
 
 
-    private Movie movie = new Movie(1,"Terminator","Action");
-    private Movie movie1 = new Movie(2,"Terminator 2","Action");
-    private Movie movie2= new Movie(3,"Batman","Action");
-    private Movie movie3 = new Movie(4,"Number One","Comedy");
-    private Movie movie4 = new Movie(5,"MadMax","Action");
-    private Movie movie5 = new Movie(6,"Green Mile","Drama");
-    private Movie movie6 = new Movie(7,"Black Suit","Horror");
-    private Movie movie7 = new Movie(8,"The Good,the Bad and the Ugly","Western");
-    private Movie movie8 = new Movie(9,"Transformers","Action");
-    private Movie movie9 = new Movie(10,"It","Horror");
+    private Movie movie = new Movie(1, "Terminator", "Action");
+    private Movie movie1 = new Movie(2, "Terminator 2", "Action");
+    private Movie movie2 = new Movie(3, "Batman", "Action");
+    private Movie movie3 = new Movie(4, "Number One", "Comedy");
+    private Movie movie4 = new Movie(5, "MadMax", "Action");
+    private Movie movie5 = new Movie(6, "Green Mile", "Drama");
+    private Movie movie6 = new Movie(7, "Black Suit", "Horror");
+    private Movie movie7 = new Movie(8, "The Good,the Bad and the Ugly", "Western");
+    private Movie movie8 = new Movie(9, "Transformers", "Action");
+    private Movie movie9 = new Movie(10, "It", "Horror");
+
     @Test
     void ShouldAddMoviesDefault() {
         posterManager.add(movie);
@@ -36,13 +37,13 @@ class PosterManagerTest {
         posterManager.add(movie8);
         posterManager.add(movie9);
         Movie[] actual = posterManager.getMovies();
-        Movie[] expected = new Movie[]{movie9,movie8,movie7,movie6,movie5,movie4,movie3,movie2,movie1,movie};
-        assertArrayEquals(expected,actual);
+        Movie[] expected = new Movie[]{movie9, movie8, movie7, movie6, movie5, movie4, movie3, movie2, movie1, movie};
+        assertArrayEquals(expected, actual);
 
     }
 
     @Test
-    void ShouldGetMovies() {
+    void ShouldGetMoviesFiveCount() {
         posterManager1.add(movie);
         posterManager1.add(movie1);
         posterManager1.add(movie2);
@@ -54,8 +55,12 @@ class PosterManagerTest {
         posterManager1.add(movie8);
         posterManager1.add(movie9);
         Movie[] actual = posterManager1.getMovies();
-        Movie[] expected = new Movie[]{movie9,movie8,movie7,movie6,movie5};
-        assertArrayEquals(expected,actual);
+        Movie[] expected = new Movie[]{movie9, movie8, movie7, movie6, movie5};
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void ShouldGetMoviesNineCount() {
         posterManager2.add(movie);
         posterManager2.add(movie1);
         posterManager2.add(movie2);
@@ -67,8 +72,8 @@ class PosterManagerTest {
         posterManager2.add(movie8);
         posterManager2.add(movie9);
         Movie[] actual1 = posterManager2.getMovies();
-        Movie[] expected1 = new Movie[]{movie9,movie8,movie7,movie6,movie5,movie4,movie3,movie2,movie1};
-        assertArrayEquals(expected1,actual1);
+        Movie[] expected1 = new Movie[]{movie9, movie8, movie7, movie6, movie5, movie4, movie3, movie2, movie1};
+        assertArrayEquals(expected1, actual1);
 
     }
 }

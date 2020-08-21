@@ -34,9 +34,12 @@ class AfishaRepositoryTest {
         Movie actual = afishaRepository.findById(3);
         Movie expected = movie2;
         assertEquals(actual, expected);
+    }
+
+    @Test
+    void ShouldSaveAndFindByIdWithNull() {
         Movie actual2 = afishaRepository.findById(6);
-        Movie expected2 = null;
-        assertEquals(actual2, expected2);
+        assertNull(actual2);
 
     }
 
